@@ -5,6 +5,9 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';
+import FolderList from './FolderList';
+import TextFieldsSearch from './TextFieldsSearch';
+import MessageInputs from './TextFieldsMessage';
 
 const drawerWidth = 320;
 
@@ -62,12 +65,21 @@ class PermanentDrawer extends React.Component {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar}>
+        <TextFieldsSearch/>
+        </div>
         <Divider />
+        <FolderList/>
       </Drawer>
           <main className={classes.content}>
             <div className={classes.toolbar} />
             <Typography>{'You think water moves fast? You should see ice.'}</Typography>
+            <div>
+            </div>
+           
+           <div>
+            <MessageInputs/>
+          </div>
           </main>
         </div>
     );
