@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography';
 const styles = theme => ({
   appBar: {
     position: 'fixed',
-    width: `calc(100% - 300px)`,
+    width: `calc(100% - 320px)`,
   },
 });
 

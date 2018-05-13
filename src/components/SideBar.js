@@ -14,7 +14,7 @@ import AddIcon from 'material-ui-icons/Add';
 import titleInitials from '../utils/title-initial';
 import Avatar from 'material-ui/Avatar';
 
-const Styles = theme => ({
+const styles = theme => ({
   drawerPaper: {
     position: 'relative',
     height: '100%',
@@ -40,10 +40,10 @@ const Styles = theme => ({
 const SideBar = ({ classes, chats }) => (
   <Drawer
     variant="permanent"
-    // classes = {{ 
-    //   paper: classes.drawerPaper,
-    // }}
-    className={classes.drawerPaper}
+    classes = {{ 
+      paper: classes.drawerPaper,
+    }}
+    // className={classes.drawerPaper}
   >
     <div className={classes.drawerHeader}>
       <TextField
@@ -75,4 +75,4 @@ const SideBar = ({ classes, chats }) => (
   </Drawer>
 );
 
-export default withStyles (Styles) (SideBar);
+export default withStyles (styles) (SideBar);
