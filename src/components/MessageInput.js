@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Input from 'material-ui/Input';
-// import classnames from 'classnames';
 import Paper from 'material-ui/Paper';
 
 const styles = theme => ({

@@ -13,14 +13,14 @@ const styles = theme => ({
     alignItems: 'center',
     padding: `${theme.spacing.unit}px ${theme.spacing.unit * 3}px`,
   },
+  messageWrapperFromMe:{
+    justifyContent: 'flex-end',
+  },
   message: {
     maxWidth: '70%',
     minWidth: '10%',
     padding: theme.spacing.unit,
     marginLeft: theme.spacing.unit * 2,
-  },
-  messageWrapperFromMe:{
-    justifyContent: 'flex-end',
   },
   messageFromMe: {
     marginRight: theme.spacing.unit * 2,
@@ -31,8 +31,8 @@ const styles = theme => ({
 class Message extends React.Component {
  render () {
   const {classes, sender, content} = this.props;
-    const isMessageFromMe = sender ==='me';
-    const userAvatar = (
+  const isMessageFromMe = sender ==='me';
+  const userAvatar = (
       <Avatar>
         {titleInitials(sender)}
       </Avatar>
