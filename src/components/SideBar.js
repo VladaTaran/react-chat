@@ -2,12 +2,10 @@ import React from 'react';
 import { withStyles } from 'material-ui/styles';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
-import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
-import RestoreIcon from 'material-ui-icons/Restore';
-import ExploreIcon from 'material-ui-icons/Explore';
 import SearchChats from './SearchChats';
 import ChatList from './ChatList';
 import NewChat from './NewChat';
+import SimpleBottomNavigation from './SimpleBottomNavigation'
 
 const styles = theme => ({
   drawerPaper: {
@@ -28,10 +26,9 @@ const SideBar = ({ classes, chats }) => (
     <Divider />
     <ChatList chats={chats}/>
     <NewChat /> 
-    <BottomNavigation showLabels>
-      <BottomNavigationAction label ="MyChats" icon={<RestoreIcon />} />
-      <BottomNavigationAction label ="Explore" icon={<ExploreIcon />} />
-    </BottomNavigation>
+    {
+      <SimpleBottomNavigation/>
+    }
   </Drawer>
 );
 

@@ -6,6 +6,7 @@ import MessageList from './MessageList';
 const styles = theme => ({
   chatLayout: {
     display: 'flex',
+    width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: '64px',
