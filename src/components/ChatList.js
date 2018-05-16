@@ -1,8 +1,9 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import List, {ListItem, ListItemText } from 'material-ui/List';
-import titleInitials from '../utils/title-initial';
-import Avatar from 'material-ui/Avatar';
+// import Avatar from './Avatar';
+import ChatListItem from './ChatListItem';
+import List  from 'material-ui/List';
+
 
 const styles = theme => ({
   chatList: {
@@ -13,11 +14,8 @@ const styles = theme => ({
 
 const ChatList = ({ chats, classes }) => (
 <List className={classes.chatList}>
-   {chats.map((chat, index) => (
-     <ListItem key ={index} button>
-       <Avatar>{titleInitials(chat.title)}</Avatar>
-       <ListItemText primary={chat.title}/>
-      </ListItem>
+   {chats && chats.map((chat, index) => (
+     <ChatListItem key ={index} {...chat} />
     ))}
 </List>
 );

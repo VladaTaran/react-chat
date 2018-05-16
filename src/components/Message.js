@@ -1,8 +1,7 @@
 import React from 'react';
 import { withStyles } from 'material-ui/styles';
-import titleInitials from '../utils/title-initial';
 import Typography from 'material-ui/Typography';
-import Avatar from 'material-ui/Avatar';
+import Avatar from './Avatar';
 import Paper from 'material-ui/Paper';
 import classnames from 'classnames';
 
@@ -27,14 +26,12 @@ const styles = theme => ({
     backgroundColor: '#f4e79b',
   },
 });
-
-class Message extends React.Component {
- render () {
-  const {classes, sender, content} = this.props;
+const Message = ({ classes, sender, content }) => {
+  // коли класи - чомусь не виходить
   const isMessageFromMe = sender ==='me';
   const userAvatar = (
-      <Avatar>
-        {titleInitials(sender)}
+      <Avatar colorFrom={sender}>
+        {sender}
       </Avatar>
     );
 
@@ -57,6 +54,5 @@ class Message extends React.Component {
         </Paper>
         {isMessageFromMe && userAvatar}
       </div>
-)}
-};
+)};
 export default withStyles(styles)(Message);
