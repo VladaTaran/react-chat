@@ -1,4 +1,5 @@
 import React from 'react';
+import fetch from 'isomorphic-fetch';
 import { withStyles } from 'material-ui';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -40,22 +41,21 @@ class LoginForm extends React.Component {
 
     const { username, password } = this.state;
     
-    console.log('Login:', username.value, password.value);
-    
-    fetch('http://localhost:8000/v1/login', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        username: username.value, 
-        password: password.value,
-      }),
-    })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(reason => console.error(reason))
+    this.props.onSubmit(username.value, password.value);
+    // fetch('http://localhost:8000/v1/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     username: username.value, 
+    //     password: password.value,
+    //   }),
+    // })
+    // .then(response => response.json())
+    // .then(json => console.log(json))
+    // .catch(reason => console.error(reason))
   };
 
   render () {
