@@ -1,0 +1,43 @@
+{
+  "chats":[{
+    "title":"Brian Buchwald"
+  },{
+    "title":"Mark Zuckerberg"
+  },{
+    "title":"Donald Trump"
+  },{
+    "title":"Drew Faust"
+  },{
+    "title":"Elon Musk"
+  },{
+    "title":"Jeffrey Bezos"
+  },{
+    "title":"Warren Buffett"
+  },{
+    "title":"Larry Page"
+  },{
+    "title":"Mr.Montgomery Burns"
+  }],
+  "messages": [{
+    "sender":"someone",
+    "content":"Hi there"
+  },{
+    "sender":"someone",
+    "content":"If humanity doesn`t land on Mars in my lifetime, I would be very disappointed."
+  },{
+    "sender":"someone",
+    "content":"Hi there"
+  },{
+    "sender":"someone",
+    "content":"First message"
+  },{
+    "sender":"someone",
+    "content":"Friends, Family, Religion. These are the three demons you must slay in order to succeed in business."
+  },{
+    "sender":"me",
+    "content":"Google it!"
+  },{
+    "sender":"someone",
+    "content":"Try some emoji 💪"
+  }]
+}
