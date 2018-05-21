@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-// import { withStyles } from 'material-ui/styles';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import WelcomePage from '../containers/WelcomePage';
 import ChatPage from '../containers/ChatPage';

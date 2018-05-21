@@ -10,7 +10,7 @@ const styles = theme => ({
   }
 })
 
-class LoginForm extends React.Component {
+class SignUpForm extends React.Component {
   state = {
     username: {
       value: '',
@@ -100,11 +100,11 @@ class LoginForm extends React.Component {
           color="primary"
           className={classes.signUpButton}
         >
-          Login
+          Sign Up
         </Button>
       </form>    
     );
   }
 }
   
-export default withStyles(styles)(LoginForm);
+export default withStyles(styles)(SignUpForm);
