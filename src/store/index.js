@@ -13,10 +13,10 @@ export default function configureStore() {
   )
 } else {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ 
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ serialize: true }) 
   : compose;
 
-  return createStore(
+  const store = createStore(
       rootReducer,
       composeEnhancers(
         applyMiddleware(
@@ -24,6 +24,14 @@ export default function configureStore() {
           loggerMiddleware
         )
       )
-    )
+    );
+
+  if (module.hot) {
+    module.hot.accept('../reducers', () => {
+      store.replaceReducer(rootReducer)
+      })
+    }
+
+    return store;
   }
 }
