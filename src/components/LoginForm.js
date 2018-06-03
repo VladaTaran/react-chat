@@ -1,5 +1,4 @@
 import React from 'react';
-import fetch from 'isomorphic-fetch';
 import { withStyles } from 'material-ui';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
@@ -31,9 +30,7 @@ class LoginForm extends React.Component {
         ...prevState[name],
         value,
       },
-
     }));
-   
   };
 
   handleSubmit = (event) => {

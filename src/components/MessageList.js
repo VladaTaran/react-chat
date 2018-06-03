@@ -1,6 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { withStyles } from 'material-ui/styles';
 import Message from './Message';
+import Typography from 'material-ui/Typography';
+import Paper from 'material-ui/Paper';
 
 const styles = theme => ({
   messagesWrapper: {
@@ -9,6 +12,9 @@ const styles = theme => ({
     width: '100%',
     paddingTop: theme.spacing.unit * 3,
     paddingBottom: '120px',
+  },
+  paper: {
+    padding: theme.spacing.unit * 3,
   },
 });
 
@@ -30,17 +36,40 @@ class MessageList extends React.Component {
   }
 
   render () {
-    const { classes, messages } = this.props;
+    const { classes, messages, match, activeUser } = this.props;
 
-    return(
-  <div className={classes.messagesWrapper} ref="messagesWrapper">
-    {messages && messages.map((message, index) => (
-            <Message key={index} {...message} />
-    ))
+    if (!match.params.chatId) {
+      return (
+        <Paper className={classes.paper}>
+          <Typography variant="display1" gutterBottom>
+            Start messaging...
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Use <strong>Global</strong> to explore communities around here.
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            Use <strong>Recents</strong> to see your recent conversations.
+          </Typography>
+        </Paper>
+      );
+    }
+
+    return messages && messages.lenght ? (
+      <div className={classes.messagesWrapper} ref="messagesWrapper">
+        {messages.map((message, index) => (
+            <Message 
+            key={index} 
+            activeUser={activeUser}
+            {...message} 
+            />
+        ))}
+      </div>
+    ) : (
+      <Typography variant="display1">
+        There is no messages yet...
+      </Typography>
+    );
   }
-  </div>
-);
-}
 }
 
-export default withStyles(styles)(MessageList);
+export default withRouter(withStyles(styles)(MessageList));
